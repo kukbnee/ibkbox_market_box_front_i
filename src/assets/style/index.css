@@ -1,0 +1,230 @@
+.page-intro-info {
+    min-height: 1000px;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 100px;
+    background: #fdfdfd;
+    overflow: hidden;
+    overflow-y: auto;
+}
+@media only screen and (max-width: 1400px) {
+    .page-intro-info {
+        padding: 0 15px;
+    }
+}
+
+/* links */
+.nfl a,
+.mlb a,
+.nhl a,
+.pga a {
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+}
+/*.nfl a {*/
+/*    color: $blue;*/
+/*}*/
+/*.nfl a:hover {*/
+/*    color: darken($blue, 20%);*/
+/*}*/
+/*.mlb a {*/
+/*    color: $green;*/
+/*}*/
+/*.mlb a:hover {*/
+/*    color: darken($green, 20%);*/
+/*}*/
+/*.nhl a {*/
+/*    color: $yellow;*/
+/*}*/
+/*.nhl a:hover {*/
+/*    color: darken($yellow, 20%);*/
+/*}*/
+/*.pga a {*/
+/*    color: $orange;*/
+/*}*/
+/*.pga a:hover {*/
+/*    color: darken($orange, 20%);*/
+/*}*/
+
+.main-info {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px 0;
+    color: #000;
+    overflow: hidden;
+    position: relative;
+    font-size: 25px;
+}
+
+/* wrapper */
+.wrapper {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto 100px auto;
+    padding: 0;
+    color: #000;
+    overflow: hidden;
+    position: relative;
+}
+
+/* lists */
+.row ul {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    display: flex;
+}
+.row ul li {
+    font-size: 14px;
+    margin: 0;
+    font-weight: normal;
+    list-style: none;
+    display: inline-block;
+    width: 20%;
+    box-sizing: border-box;
+}
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+    .row ul li { font-size: 13px; }
+}
+@media only screen and (max-width: 479px) {
+    .row ul li { font-size: 13px; }
+}
+
+.row ul li:nth-child(1) {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.row ul li:nth-child(2) {
+    width: 34%;
+    padding-left: 10px;
+}
+
+.row ul li:nth-child(3) {
+    width: 13%;
+}
+
+
+.title ul li {
+    padding: 10px 5px;
+    font-size:15px;
+}
+.row ul li {
+    padding: 5px 5px;
+}
+
+/*row-link*/
+.row-link {
+    text-align: right !important;
+    flex:1;
+}
+.row-link a {
+    margin-right: 10px !important;
+    background: #ebebeb;
+    color: #3b3b3b;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* rows */
+.row {
+    padding: 10px 0;
+    height: 45px;
+    font-size: 0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+    border-top: 1px solid #cecece;
+}
+.row:hover {
+
+}
+.title {
+    padding: 15px 0 0 0;
+    height: 45px;
+    font-size: 0;
+    background-color: #fff;
+    line-height: 35px;
+    color: #fff;
+}
+.title:hover {
+}
+
+@media only screen and (max-width: 767px) {
+    .title-hide { display: none; }
+}
+
+
+
+/* row one - fadeIn */
+.row-fadeIn-wrapper {
+    opacity: 0;
+    font-size: 0;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.2s ease-out;
+    animation: fadeIn 0.4s ease-out 2s 1 alternate;
+    animation-fill-mode: forwards;
+}
+.row-fadeIn-wrapper:hover {
+    height: 35px;
+}
+@media only screen and (max-width: 767px) {
+    .row-fadeIn-wrapper:hover {
+        height: 55px; }
+}
+@media only screen and (max-width: 359px) {
+    .row-fadeIn-wrapper:hover {
+        height: 75px;}
+}
+
+.fadeIn {
+    padding: 20px 0;
+    font-size: 0;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+}
+
+
+/* row two - fadeOut */
+.row-fadeOut-wrapper {
+    font-size: 0;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.2s ease-out;
+    animation: fadeOut 0.4s ease-out 8s 1 alternate;
+    animation-fill-mode: forwards;
+    opacity: 1;
+    height: 65px;
+}
+.row-fadeOut-wrapper:hover {
+    height: 100px;
+}
+
+/* update content */
+.update-row {
+    animation: update 0.5s ease-out 12s 1 alternate;
+}
+.update1 {
+    position: absolute;
+    top: 25px;
+    display: inline-block;
+    opacity: 1;
+    animation: update1 1s ease-out 12s 1 alternate;
+    animation-fill-mode: forwards;
+}
+.update2 {
+    position: absolute;
+    top: 25px;
+    display: inline-block;
+    opacity: 0;
+    animation: update2 4s ease-out 13s 1 alternate;
+    animation-fill-mode: forwards;
+}
+
+

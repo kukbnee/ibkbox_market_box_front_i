@@ -1,0 +1,74 @@
+.product .container {
+    background: transparent;
+}
+.faq_wrap {
+    margin: 50px 40px 65px 40px;
+}
+.faq_wrap .faq_top {
+    text-align: center;
+}
+.faq_top .faq_title {
+    font-size: 26px;
+    letter-spacing: -0.05em;
+    color: #003068;
+    font-weight: 500;
+}
+.faq_top .faq_subtitle {
+    font-size: 14px;
+    color: #666666;
+    margin-top: 10px;
+}
+.faq_wrap .faq_content {
+    margin-top: 15px;
+}
+.faq_content .faq_list {}
+.faq_content .faq_list .faq_item {
+    margin-top: 15px;
+}
+.faq_content .faq_list .faq_item .faq_group {
+    border: 1px solid #e8e8e8;
+    border-radius:4px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 20px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    cursor:pointer;
+}
+.faq_content .faq_list .faq_item .faq_group .text {
+    font-size: 16px;
+    color: #333333;
+}
+
+.faq_content .faq_list .faq_item .faq_group .btn {
+    background: url("../images/ico_faq_arrow.png") center center no-repeat;
+    height: 12px;
+    width: 6px;
+    transition:all .4s;
+}
+.faq_content .faq_list .faq_item.on .faq_group .btn {
+    transform: rotate(180deg);
+}
+.faq_content .faq_list .faq_item .faq_group_item {
+    margin-top: 7px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    background: #e8e8e8;
+    padding: 20px;
+    display: none;
+}
+.faq_content .faq_list .faq_item.on .faq_group_item {
+    display: block;
+}
+.faq_content .faq_list .faq_item .faq_group_item .faq_group_text {
+    font-size: 12px;
+    color: #666666;
+    line-height: 18px;
+    letter-spacing: -0.05em;
+}
+
+
+
+

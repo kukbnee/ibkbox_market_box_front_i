@@ -1,0 +1,89 @@
+<script type="text/javascript" src="esg/jquery-1.10.2.min.js"></script>
+<script>
+
+    function getCookieValue(cookieName){
+        var cookieValue=null;
+        if(document.cookie){
+            var array=document.cookie.split((escape(cookieName)+'='));
+            if(array.length >= 2){
+                var arraySub=array[1].split(';');
+                cookieValue=unescape(arraySub[0]);
+            }
+        }
+        return cookieValue;
+    }
+
+    $(document).ready(function (){
+
+        //
+        let location_data = window.location;
+        let get_href = location_data.href;
+        let get_param = get_href.split("?"); //?type=2
+        let actType = "";
+        let apiUrl = "";
+
+        //
+        let data = get_param[1].split("&");
+        for(let i = 0; i < data.length; i++){
+            let splitData = data[i].split("=");
+            if(splitData[0] == "type"){
+                actType = Number(splitData[1]);
+            }else if(splitData[0] == "apiurl"){
+                apiUrl = splitData[1];
+            }
+        }
+
+        if(actType != ""){
+            switch(actType){
+                case 1: //팝업닫기
+                    top.esgCallbackInit();
+                    break;
+                case 2: //로그인 후 이동페이지
+                    if(apiUrl != ""){
+                        $.ajax({
+                            type:"post",
+                            url:apiUrl+"/api/login",
+                            data: JSON.stringify({
+                                "type":actType,
+                                "auth":getCookieValue("auth")
+                            }),
+                            dataType:'json',
+                            contentType: "application/json; charset=utf-8",
+                            success:function(rtnData){
+                                if(rtnData.token != null || rtnData.token != undefined) {
+                                    localStorage.setItem("token", rtnData.token);
+                                    localStorage.setItem("type", rtnData.data);
+                                    var filter = "win16|win32|win64|mac|macintel";
+                                    if ( navigator.platform ) {
+                                        if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ) {
+                                            //모바일인경우
+                                            window.location.href='/';
+                                        } else {
+                                            //PC인경우
+                                            top.esgCallbackInit();
+                                        }
+                                    }
+                                }else{
+                                    alert('error--4');
+                                }
+                            },
+                            error: function(rtnData) {
+                                alert('error--3');
+                                //top.esgCallbackInit();
+                            }
+                        });
+                    }else{
+                        alert('error--2');
+                        //top.esgCallbackInit();
+                    }
+                    break;
+                default:
+                    alert('error--1');
+                    //top.esgCallbackInit();
+            }
+        }else{
+            alert('error--0');
+            //top.esgCallbackInit();
+        }
+    })
+</script>
